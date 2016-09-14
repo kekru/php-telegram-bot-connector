@@ -9,9 +9,9 @@ $tc = new TelegramConnector('123456789:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijkl', 
 //ini_set('display_errors', 1);
 //ini_set('display_startup_errors', 1);
 //error_reporting(E_ALL);
-
-//To debug your bot, override Chatid and Commandtext, so you can call https://yourwebsite.org/helloworld-bot.php via your browser, instead of writing in telegram
-//$tc->setChatid(13346357); //your chatid. If you don't know, go to https://telegram.me/whiledoinfobot and ask that bot with "/chatid"
+//----------------------------------
+//To debug your bot, override Chatid and Commandtext, so you can call https://yourwebsite.org/helloworld-bot.php via your browser, instead of writing in telegram chat
+//$tc->setChatid(13346357); //your chatid. If you don't know it, go to https://telegram.me/whiledoinfobot and ask that bot with "/chatid"
 //$tc->setCommandtext('/name Kevin'); //the command, you would normally send in the telegram chat
 //----------------------------------
 
@@ -22,14 +22,14 @@ $commandParam = $tc->getCommandParam();
 
 //if the user sends "/hi", the bot will answer "Hello World"
 if($tc->commandIs('/hi')){		
-	  echo $tc->sendMessage('Hello World');
+   echo $tc->sendMessage('Hello World');
 }
 
 if($commandParam != ''){	
   
-  //if the user sends "/name Kevin", the bot will answer "Hello Kevin"
-	if($tc->commandIs('/name')){		
-		echo $tc->sendMessage('Hello '.$commandParam);
-	}
+   //if the user sends "/name Kevin", the bot will answer "Hello Kevin"
+   if($tc->commandIs('/name')){		
+      echo $tc->sendMessage('Hello '.$commandParam);
+   }
 }	
 ?>
