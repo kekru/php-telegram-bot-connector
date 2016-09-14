@@ -55,7 +55,7 @@ class TelegramConnector {
 	function sendShareQRCode(){
 		$filename = './shareqr.png';
 		copy('https://whiledo.de/api/util/qr.php?q='.urlencode($this->getBotLink()), $filename);
-		echo $this->sendImage($filename);
+		$this->sendImage($filename);
 		unlink($filename);	
 	}
 	
